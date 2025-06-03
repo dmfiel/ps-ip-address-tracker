@@ -1,0 +1,17 @@
+{
+  "name": "mod-7-ip-addr-tracker",
+  "version": "1.0.0",
+  "description": "This project uses TypeScript and advanced JavaScript to build a functional, real-world application. It employs object-oriented programming (OOP) principles, asynchronous operations, error handling, and API interaction.",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --mode development --open --hot",
+    "build": "webpack --mode production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}
