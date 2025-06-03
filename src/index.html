@@ -3,15 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
-
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-
+    <link rel="stylesheet" href="./styles.css" />
     <title>Frontend Mentor | IP Address Tracker</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -26,16 +24,42 @@
     </style>
   </head>
   <body>
-    IP Address Tracker Search for any IP address or domain IP Address Location
-    Timezone UTC
-    <!-- add offset value dynamically using the API -->
-    ISP
-
+    <h1>IP Address Tracker</h1>
+    <div id="controls">
+      <input
+        type="text"
+        id="ipaddr"
+        placeholder="Search for any IP address or domain"
+      />
+      <button id="search">></button>
+    </div>
+    <main id="main" role="main">
+      <div id="data">
+        <div class="item">
+          <h2>IP ADDRESS</h2>
+          <span id="ipaddress">192.212.174.101</span>
+        </div>
+        <div class="item">
+          <h2>LOCATION</h2>
+          <span id="location">Brooklyn, NY 10001</span>
+        </div>
+        <div class="item">
+          <h2>TIMEZONE</h2>
+          <span id="timezone">UTC -05:00</span>
+        </div>
+        <div class="item">
+          <h2>ISP</h2>
+          <span id="isp">SpaceX Starlink</span>
+        </div>
+      </div>
+    </main>
+    <section id="map"></section>
     <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
       >. Coded by <a href="https://fiel.us">David Fiel</a>.
     </div>
+    <script src="./bundle.js"></script>
   </body>
 </html>

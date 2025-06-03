@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+  --White: #ffffff;
+  --Very-Dark-Gray: hsl(0, 0%, 17%);
+  --Dark-Gray: hsl(0, 0%, 59%);
+}
+
+body {
+  /* background-color: var(--Slate-300); */
+  font-family: 'Rubik', sans-serif;
+  color: var(--White);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  background-image: url('./images/pattern-bg-desktop.png');
+  background-repeat: no-repeat;
+  background-position: top center;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-weight: 500;
+  margin: 30px;
+}
+
+#ipaddr {
+  font-size: 1.125rem;
+  padding: 15px;
+  border: 1px solid var(--Dark-Gray);
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  width: 400px;
+  margin: 0 -10px 125px 0;
+}
+#search {
+  font-family: 'Rubik', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  padding: 15px 20px;
+  border: 1px solid black;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  color: white;
+  background-color: black;
+  margin: 0;
+}
+main {
+  position: absolute;
+  padding: 50px;
+  width: 100%;
+  max-width: 1440px;
+  box-sizing: border-box;
+  top: 150px;
+}
+#data {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: white;
+  border-radius: 15px;
+  border: 1px solid lightgrey;
+  color: var(--Dark-Gray);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border-right: 1px solid lightgrey;
+  width: 100%;
+  padding: 0 40px;
+}
+
+.item:last-child {
+  border-right: none;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.item span {
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: var(--Very-Dark-Gray);
+}
+
+#map {
+  background-image: url('./images/map.png');
+  width: 100%;
+  height: 1000px;
+  max-height: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+  body {
+    background-image: url('./images/pattern-bg-desktop.png');
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  #controls {
+    padding: 0px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  #ipaddr {
+    min-width: 250px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  #search {
+    height: 53px;
+  }
+
+  main {
+    top: 145px;
+    padding: 20px;
+  }
+
+  #data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+    gap: 20px;
+  }
+  .item {
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    border-right: none;
+  }
+  h2 {
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+  .item span {
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+}
