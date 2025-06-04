@@ -1,10 +1,12 @@
 import { getGeolocation } from './services/getgeolocation';
+import { resizeElementHeight } from './services/resizeelementheight';
 import { showMap } from './services/showmap';
 
 const dataIPAddr = document.getElementById('ipaddress');
 const dataLocation = document.getElementById('location');
 const dataTimezone = document.getElementById('timezone');
 const dataISP = document.getElementById('isp');
+const elementMap = document.getElementById('map');
 
 const inputAddr = document.getElementById('ipaddr');
 const inputButton = document.getElementById('search');
@@ -29,6 +31,8 @@ async function updateGeo() {
       dataLocation.innerText = `${ipGeo.location.city}, ${ipGeo.location.region} ${ipGeo.location.postalCode}`;
     if (dataTimezone) dataTimezone.innerText = 'UTC ' + ipGeo.location.timezone;
     if (dataISP) dataISP.innerText = ipGeo.isp;
+
+    if (elementMap) resizeElementHeight(elementMap, 300);
 
     showMap(ipGeo.location.lat, ipGeo.location.lng);
   }

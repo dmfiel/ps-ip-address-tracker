@@ -50,15 +50,14 @@ h1 {
   height: 54px;
 }
 main {
-  /* position: absolute; */
-  /* padding: 50px; */
-  width: calc(100%-100px);
+  position: absolute;
+  padding: 50px;
+  width: 100%;
   max-width: 1440px;
   box-sizing: border-box;
   top: 150px;
 }
 #data {
-  margin-top: -80px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -82,6 +81,7 @@ main {
   border-right: 1px solid lightgrey;
   width: 100%;
   padding: 0 40px;
+  overflow-wrap: anywhere;
 }
 
 .item:last-child {
@@ -102,16 +102,9 @@ h2 {
 
 #map {
   background-image: url('./images/map.png');
-  width: 1440px;
-  height: 1000px;
+  width: 100%;
   max-height: 100%;
-  z-index: 1;
-}
-
-#data_map {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
+  z-index: -1;
 }
 
 .attribution {
