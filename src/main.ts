@@ -1,3 +1,44 @@
-import { API_KEY_IP_GEOLOCATION } from './secrets';
+import { getGeolocation } from './services/getgeolocation';
+import { showMap } from './services/showmap';
 
-console.log(API_KEY_IP_GEOLOCATION);
+const dataIPAddr = document.getElementById('ipaddress');
+const dataLocation = document.getElementById('location');
+const dataTimezone = document.getElementById('timezone');
+const dataISP = document.getElementById('isp');
+
+const inputAddr = document.getElementById('ipaddr');
+const inputButton = document.getElementById('search');
+if (!inputAddr || !inputButton)
+  throw new Error('IP Address input or button are missing.');
+inputButton.addEventListener('click', updateGeo);
+inputAddr.addEventListener('blur', updateGeo);
+inputAddr.addEventListener('onpaste', updateGeo);
+inputAddr.addEventListener('keydown', function (e) {
+  if (e.key === 'Enter') {
+    updateGeo();
+  }
+});
+
+async function updateGeo() {
+  clearGeo();
+  const ipAddr = (inputAddr as HTMLInputElement).value;
+  const ipGeo = await getGeolocation(ipAddr);
+  if (ipGeo) {
+    if (dataIPAddr) dataIPAddr.innerText = ipGeo.ip;
+    if (dataLocation)
+      dataLocation.innerText = `${ipGeo.location.city}, ${ipGeo.location.region} ${ipGeo.location.postalCode}`;
+    if (dataTimezone) dataTimezone.innerText = 'UTC ' + ipGeo.location.timezone;
+    if (dataISP) dataISP.innerText = ipGeo.isp;
+
+    showMap(ipGeo.location.lat, ipGeo.location.lng);
+  }
+}
+
+function clearGeo() {
+  if (dataIPAddr) dataIPAddr.innerText = '';
+  if (dataLocation) dataLocation.innerText = '';
+  if (dataTimezone) dataTimezone.innerText = '';
+  if (dataISP) dataISP.innerText = '';
+}
+
+updateGeo();

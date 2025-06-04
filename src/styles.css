@@ -47,16 +47,18 @@ h1 {
   color: white;
   background-color: black;
   margin: 0;
+  height: 54px;
 }
 main {
-  position: absolute;
-  padding: 50px;
-  width: 100%;
+  /* position: absolute; */
+  /* padding: 50px; */
+  width: calc(100%-100px);
   max-width: 1440px;
   box-sizing: border-box;
   top: 150px;
 }
 #data {
+  margin-top: -80px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -66,6 +68,7 @@ main {
   color: var(--Dark-Gray);
   width: 100%;
   box-sizing: border-box;
+  z-index: 2;
 }
 
 .item {
@@ -99,9 +102,26 @@ h2 {
 
 #map {
   background-image: url('./images/map.png');
-  width: 100%;
+  width: 1440px;
   height: 1000px;
   max-height: 100%;
+  z-index: 1;
+}
+
+#data_map {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.attribution {
+  margin-top: 40px;
+  color: var(--Very-Dark-Gray);
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }
 
 @media screen and (max-width: 1000px) {
