@@ -4,11 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./images/favicon-32x32.png"
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="https://fiel.us/src/apple-touch-icon.png"
     />
+    <link rel="icon" sizes="48x48" href="https://fiel.us/favicon.ico" />
+    <link
+      rel="icon"
+      href="https://fiel.us/src/f-logo-purple-transparent.svg"
+      type="image/svg+xml"
+    />
+    <link rel="manifest" href="https://fiel.us/src/manifest.webmanifest" />
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -16,24 +22,27 @@
       crossorigin=""
     />
     <link rel="stylesheet" href="./styles.css" />
-    <title>IP Address Tracker</title>
+    <title>Web Address Finder</title>
   </head>
   <body>
     <div id="header_flags">
       <section class="flag flag-big"></section>
-      <header>
+      <header role="banner">
         <div id="flags-small">
           <section class="flag flag-small"></section>
-          <h1>IP Address Tracker</h1>
+          <h1>Web Address Finder</h1>
           <section class="flag flag-small"></section>
         </div>
         <div id="controls">
+          <label class="hidden" for="ipaddr">IP Address or Domain</label>
           <input
             type="text"
             id="ipaddr"
             placeholder="Search for any IP address or domain"
           />
-          <button id="search"><img src="./images/icon-arrow.svg" /></button>
+          <button id="search">
+            <img src="./images/icon-arrow.svg" alt="Submit" />
+          </button>
         </div>
       </header>
       <section class="flag flag-big"></section>
@@ -42,30 +51,37 @@
       <div id="data">
         <div class="item">
           <h2>IP ADDRESS</h2>
-          <span id="ipaddress">192.212.174.101</span>
+          <span id="ipaddress"></span>
         </div>
         <div class="item">
           <h2>LOCATION</h2>
-          <span id="location">Brooklyn, NY 10001</span>
+          <span id="location"></span>
         </div>
         <div class="item">
           <h2>TIMEZONE</h2>
-          <span id="timezone">UTC -05:00</span>
+          <span id="timezone"></span>
         </div>
         <div class="item">
           <h2>ISP</h2>
-          <span id="isp">SpaceX Starlink</span>
+          <span id="isp"></span>
         </div>
       </div>
-      <div id="error" class="hidden">Error</div>
+      <div id="error" class="hidden" aria-live="polite"></div>
     </main>
     <section id="map"></section>
-    <div class="attribution">
+    <footer role="contentinfo" class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
       >. Coded by <a href="https://fiel.us">David Fiel</a>.
-    </div>
+      <a
+        href="https://www.flaticon.com/free-icons/letter-f"
+        title="letter f icons"
+        style="text-align: center; font-size: 8pt"
+      >
+        <p>Letter f icons created by rashedul.islam - Flaticon</p></a
+      >
+    </footer>
     <script
       src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
       integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="

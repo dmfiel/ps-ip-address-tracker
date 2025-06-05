@@ -1,3 +1,4 @@
+// Pull data based on IP address or domain nmae from the Geo Location API at geo.ipify.org
 import { showError } from '../main';
 import { IPGeolocation } from '../models/ipgeolocation';
 import { API_KEY_IP_GEOLOCATION } from '../secrets';
@@ -7,6 +8,7 @@ const BASE_URL = 'https://geo.ipify.org/api/v2';
 const ENDPOINT_COUNTRY_CITY = '/country,city';
 
 export async function getGeolocation(ipAddr: string = '') {
+  let flagIPaddr = true;
   try {
     ipAddr = ipAddr.trim();
     // try to get cached data from local storage first, to save on API calls
@@ -39,12 +41,13 @@ export async function getGeolocation(ipAddr: string = '') {
           ENDPOINT_COUNTRY_CITY +
           `?apiKey=${API_KEY_IP_GEOLOCATION}&ipAddress=${ipAddr}`
       );
-    else
-      data = await timedFetch(
-        BASE_URL +
-          ENDPOINT_COUNTRY_CITY +
-          `?apiKey=${API_KEY_IP_GEOLOCATION}&domain=${ipAddr}`
-      );
+    // consider the search parameter to be a domain name
+    else flagIPaddr = false;
+    data = await timedFetch(
+      BASE_URL +
+        ENDPOINT_COUNTRY_CITY +
+        `?apiKey=${API_KEY_IP_GEOLOCATION}&domain=${ipAddr}`
+    );
 
     const ipGeo = new IPGeolocation(
       data.ip,
@@ -63,6 +66,6 @@ export async function getGeolocation(ipAddr: string = '') {
     }
   } catch (error) {
     console.error('Fetch error during getGeolocation:', error);
-    showError('Unable to find IP address or domain.');
+    showError(`Unable to find ${flagIPaddr ? 'IP address' : 'domain'}.`);
   }
 }

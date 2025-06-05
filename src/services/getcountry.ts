@@ -1,3 +1,4 @@
+// Pull country and flag info from the RESTCountries API
 import { showError } from '../main';
 import { timedFetch } from './timedfetch';
 
@@ -13,6 +14,7 @@ export type CountryData = {
 export async function getCountry(countryCode: string = 'US') {
   try {
     countryCode = countryCode.trim();
+
     // try to get cached data from local storage first, to save on API calls
     let localCountry;
     if (countryCode) localCountry = localStorage.getItem(countryCode);
@@ -33,7 +35,7 @@ export async function getCountry(countryCode: string = 'US') {
     let data = await timedFetch(
       BASE_URL + ENDPOINT_COUNTRY_CITY + `${countryCode}?fields=name,flags`
     );
-    // console.log(data);
+
     let countryData: CountryData = {
       flagImg: data.flags.png,
       flagAlt: data.flags.alt,
@@ -48,6 +50,7 @@ export async function getCountry(countryCode: string = 'US') {
   }
 }
 
+// Sample data from the RESTCountries API
 // let cn = {
 //   flags: {
 //     png: 'https://flagcdn.com/w320/cn.png',

@@ -246,4 +246,9 @@ h2 {
     height: 32px;
     width: 60px;
   }
+
+  #error {
+    font-size: 1rem;
+    translate: 0 -30px;
+  }
 }

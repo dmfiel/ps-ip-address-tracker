@@ -13,8 +13,6 @@ const elementsFlag = document.querySelectorAll('.flag')!;
 
 const inputAddr = document.getElementById('ipaddr')!;
 const inputButton = document.getElementById('search')!;
-// if (!inputAddr || !inputButton)
-//   throw new Error('IP Address input or button are missing.');
 inputButton.addEventListener('click', updateGeo);
 inputAddr.addEventListener('blur', updateGeo);
 inputAddr.addEventListener('onpaste', updateGeo);
@@ -28,6 +26,7 @@ async function updateGeo() {
   clearGeo();
   clearFlags();
   elementError.classList.add('hidden');
+
   const ipAddr = (inputAddr as HTMLInputElement).value;
   const ipGeo = await getGeolocation(ipAddr);
   if (ipGeo) {

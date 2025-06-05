@@ -1,3 +1,4 @@
+// Class to hold data for the Geo Location API at geo.ipify.org
 export type IPGeoLocation = {
   country: string;
   region: string;
