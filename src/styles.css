@@ -5,7 +5,11 @@
   --Very-Dark-Gray: hsl(0, 0%, 17%);
   --Dark-Gray: hsl(0, 0%, 59%);
 }
-
+html {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
 body {
   /* background-color: var(--Slate-300); */
   font-family: 'Rubik', sans-serif;
@@ -22,9 +26,29 @@ body {
   margin: 0 auto;
 }
 
+#header_flags {
+  padding: 35px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  width: calc(100% - 70px);
+  z-index: 3;
+}
+
+#flags-small {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: top;
+  text-align: center;
+}
+
 h1 {
   font-weight: 500;
   margin: 30px;
+  text-align: center;
+  width: 100%;
 }
 
 #ipaddr {
@@ -34,7 +58,7 @@ h1 {
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
   width: 400px;
-  margin: 0 -10px 125px 0;
+  margin: 0 -10px 55px 0;
 }
 #search {
   font-family: 'Rubik', sans-serif;
@@ -51,11 +75,12 @@ h1 {
 }
 main {
   position: absolute;
-  padding: 50px;
-  width: 100%;
-  max-width: 1440px;
+  padding-top: 50px;
+  width: calc(100% - 100px);
+  max-width: 1340px;
   box-sizing: border-box;
   top: 150px;
+  z-index: 2; /* make this element on top of the map */
 }
 #data {
   display: flex;
@@ -67,7 +92,6 @@ main {
   color: var(--Dark-Gray);
   width: 100%;
   box-sizing: border-box;
-  z-index: 2;
 }
 
 .item {
@@ -100,11 +124,22 @@ h2 {
   color: var(--Very-Dark-Gray);
 }
 
+.hidden {
+  display: none;
+}
+
+#error {
+  color: red;
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  translate: 0 -40px;
+}
+
 #map {
-  background-image: url('./images/map.png');
   width: 100%;
   max-height: 100%;
-  z-index: -1;
+  z-index: 1;
 }
 
 .attribution {
@@ -115,6 +150,20 @@ h2 {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+.flag {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+.flag-small {
+  display: none;
+}
+.flag img {
+  height: 100px;
+  width: 190px;
 }
 
 @media screen and (max-width: 1000px) {
@@ -143,7 +192,8 @@ h2 {
 
   main {
     top: 145px;
-    padding: 20px;
+    padding-top: 20px;
+    width: calc(100% - 40px);
   }
 
   #data {
@@ -155,6 +205,7 @@ h2 {
   }
   .item {
     align-items: center;
+    text-align: center;
     width: 100%;
     box-sizing: border-box;
     margin: 0;
@@ -168,5 +219,31 @@ h2 {
   .item span {
     font-size: 1.25rem;
     font-weight: 500;
+  }
+
+  #header_flags {
+    margin: 0;
+    padding: 0;
+    display: block;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .flag {
+    margin: 10px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    font-size: 0.5rem;
+  }
+  .flag-big {
+    display: none;
+  }
+  .flag img {
+    height: 32px;
+    width: 60px;
   }
 }

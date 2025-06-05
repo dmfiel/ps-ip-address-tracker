@@ -10,3 +10,6 @@ export function resizeElementHeight(element: HTMLElement, extra: number = 0) {
   }
   element.style.height = height - element.offsetTop + extra + 'px';
 }
+
+// https://stackoverflow.com/questions/33080/setting-the-height-of-a-div-dynamically
+// Thanks to Jason Bunting for the element resizing code

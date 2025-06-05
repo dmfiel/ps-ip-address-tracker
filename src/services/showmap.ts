@@ -43,9 +43,6 @@ export function showMap(
   ).addTo(myMap);
 
   if (message)
-    marker([lat, lng], { icon: myIcon })
-      .addTo(myMap)
-      .bindPopup(message)
-      .openPopup();
+    marker([lat, lng], { icon: myIcon }).addTo(myMap).bindPopup(message);
   else marker([lat, lng], { icon: myIcon }).addTo(myMap);
 }

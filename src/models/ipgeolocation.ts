@@ -43,6 +43,7 @@ export class IPGeolocation {
     if (!this.ip) throw new Error(`Geolocation error: No ip address found`);
     if (!this.location.timezone)
       throw new Error(`Geolocation error: No timezone found`);
+    // lots of the entries don't have an ISP entry, so don't validate this field
     // if (!this.isp) throw new Error(`Geolocation error: No ISP found`);
     return true;
   }

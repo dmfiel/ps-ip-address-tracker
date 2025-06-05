@@ -1,3 +1,4 @@
+import { showError } from '../main';
 import { IPGeolocation } from '../models/ipgeolocation';
 import { API_KEY_IP_GEOLOCATION } from '../secrets';
 import { timedFetch } from './timedfetch';
@@ -29,7 +30,8 @@ export async function getGeolocation(ipAddr: string = '') {
       }
     }
 
-    // ?apiKey=at_41zI9sssBYhKrX05hgGBH3CFgAXG4&ipAddress=8.8.8.8
+    // https://stackoverflow.com/questions/5284147/validating-ipv4-addresses-with-regexp/68104187#68104187
+    // Thanks to Danail Gabenski for the IPv4 regex
     let data;
     if (ipAddr.match(/^((25[0-5]|(2[0-4]|1\d|[1-9]|)\d)\.?\b){4}$/))
       data = await timedFetch(
@@ -51,7 +53,6 @@ export async function getGeolocation(ipAddr: string = '') {
       data.as,
       data.isp
     );
-    // console.log(product);
     if (ipGeo.validateIPGeo()) {
       if (ipAddr) localStorage.setItem(ipAddr, JSON.stringify(ipGeo));
       else localStorage.setItem('local', JSON.stringify(ipGeo));
@@ -62,5 +63,6 @@ export async function getGeolocation(ipAddr: string = '') {
     }
   } catch (error) {
     console.error('Fetch error during getGeolocation:', error);
+    showError('Unable to find IP address or domain.');
   }
 }

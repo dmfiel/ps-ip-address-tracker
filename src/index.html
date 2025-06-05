@@ -19,16 +19,25 @@
     <title>IP Address Tracker</title>
   </head>
   <body>
-    <h1>IP Address Tracker</h1>
-    <div id="controls">
-      <input
-        type="text"
-        id="ipaddr"
-        placeholder="Search for any IP address or domain"
-      />
-      <button id="search"><img src="./images/icon-arrow.svg" /></button>
+    <div id="header_flags">
+      <section class="flag flag-big"></section>
+      <header>
+        <div id="flags-small">
+          <section class="flag flag-small"></section>
+          <h1>IP Address Tracker</h1>
+          <section class="flag flag-small"></section>
+        </div>
+        <div id="controls">
+          <input
+            type="text"
+            id="ipaddr"
+            placeholder="Search for any IP address or domain"
+          />
+          <button id="search"><img src="./images/icon-arrow.svg" /></button>
+        </div>
+      </header>
+      <section class="flag flag-big"></section>
     </div>
-
     <main id="main" role="main">
       <div id="data">
         <div class="item">
@@ -48,9 +57,9 @@
           <span id="isp">SpaceX Starlink</span>
         </div>
       </div>
+      <div id="error" class="hidden">Error</div>
     </main>
     <section id="map"></section>
-
     <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
