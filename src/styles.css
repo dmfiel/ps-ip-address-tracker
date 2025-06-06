@@ -11,73 +11,48 @@
   --font-rubik: 'Rubik', sans-serif;
 }
 
-:root {
-  --Very-Dark-Gray: hsl(0, 0%, 17%);
-  --Dark-Gray: hsl(0, 0%, 59%);
-}
 body {
   background-image: url('./images/pattern-bg-desktop.png');
   background-repeat: no-repeat;
   background-position: top center;
 }
 
-#search {
-  translate: -5px 0px;
-}
-#error {
-  translate: 0 -30px;
-}
-
-h2 {
-  margin-top: 0;
-  font-size: 0.85rem;
-  font-weight: 700;
-}
-
-.hidden {
-  display: none;
-}
-
-#map {
-  width: 100%;
-  max-height: 100%;
-  z-index: 1;
-}
-
-.attribution {
-  margin-top: 40px;
-  color: var(--Very-Dark-Gray);
-  font-size: 11px;
-  text-align: center;
-}
-.attribution a {
-  color: hsl(228, 45%, 44%);
-}
-
-.flag {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: center;
-}
-.flag-small {
-  display: none;
-}
-.flag img {
-  height: 100px;
-  width: 190px;
-}
 main {
   width: calc(100% - 40px);
 }
 
+#error {
+  translate: 0 -30px;
+}
+
+.flag-small {
+  display: flex;
+}
+.flag-small img {
+  height: 32px;
+  width: 60px;
+}
+.flag-big {
+  display: none;
+}
+.flag-big img {
+  height: 100px;
+  width: 190px;
+}
+
 @media screen and (min-width: 1024px) {
+  #search {
+    translate: -5px 0px;
+  }
+
   main {
     width: calc(100% - 100px);
   }
+
   #error {
     translate: 0 -35px;
   }
+
   .item {
     border-right: 1px solid lightgrey;
     overflow-wrap: anywhere;
@@ -85,38 +60,11 @@ main {
   .item:last-child {
     border-right: none;
   }
-}
 
-@media screen and (max-width: 1024px) {
-  h2 {
-    font-size: 0.75rem;
-    font-weight: 500;
-    margin-bottom: 5px;
-  }
-
-  #header_flags {
-    margin: 0;
-    padding: 0;
-    display: block;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-  }
-
-  .flag {
-    margin: 10px;
-
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    align-items: center;
-    font-size: 0.5rem;
-  }
   .flag-big {
-    display: none;
+    display: flex;
   }
-  .flag img {
-    height: 32px;
-    width: 60px;
+  .flag-small {
+    display: none;
   }
 }

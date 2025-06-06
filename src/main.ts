@@ -41,7 +41,7 @@ async function updateGeo() {
 
     const countryData = await getCountry(ipGeo.location.country);
     if (countryData) {
-      const flagHTML = `<img id='flagsvg' src='${countryData.flagImg}' alt='${countryData.flagAlt}' /><label for='flagsvg'>${countryData.countryName}</label>`;
+      const flagHTML = `<img id='flagsvg' src='${countryData.flagImg}' alt='${countryData.flagAlt}' /><label class='flaglabel' for='flagsvg'>${countryData.countryName}</label>`;
       for (const flag of elementsFlag) flag.innerHTML = flagHTML;
     }
   }

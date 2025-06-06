@@ -29,25 +29,31 @@
   >
     <div
       id="header_flags"
-      class="p-[35px] w-[100%] flex flex-row justify-between z-3"
+      class="w-[100%] box-border lg:box-content lg:flex flex-row justify-between z-3 whitespace-nowrap"
     >
-      <section class="flag flag-big"></section>
-      <header role="banner">
+      <section
+        class="flag flag-big m-[35px] flex-col gap-[10px] align-center text-center"
+      ></section>
+      <header role="banner" class="lg:mt-[25px]">
         <div
           id="flags-small"
-          class="flex flex-row justify-between align-top text-center"
+          class="flags-small flex flex-row justify-between align-top text-center"
         >
-          <section class="flag flag-small"></section>
+          <section
+            class="flag flag-small flex-col gap-[5px] align-center m-[10px] text-[0.5rem]"
+          ></section>
           <h1
             class="text-2xl lg:text-[2rem] font-medium my-[20px] lg:m-0 lg:mb-[20px] text-center w-[100%]"
           >
             Web Address Tracker
           </h1>
-          <section class="flag flag-small"></section>
+          <section
+            class="flag flag-small flex-col gap-[5px] align-center m-[10px] text-[0.5rem]"
+          ></section>
         </div>
         <div
           id="controls"
-          class="w-[100%] px-[20px] box-border flex flex-nowrap mb-[85px] items-start"
+          class="w-[100%] px-[20px] box-border flex flex-nowrap mb-[130px] items-start"
         >
           <label class="hidden" for="ipaddr">IP Address or Domain</label>
           <input
@@ -64,12 +70,14 @@
           </button>
         </div>
       </header>
-      <section class="flag flag-big"></section>
+      <section
+        class="flag flag-big m-[35px] flex-col gap-[10px] align-center text-center"
+      ></section>
     </div>
     <main
       id="main"
       role="main"
-      class="absolute top-[145px] lg:top-[150px] max-w-[1340px] pt-[20px] lg:pt-[50px] my-0 mx-[20px] lg:mx-[50px] box-border z-2"
+      class="absolute top-[140px] lg:top-[135px] max-w-[1340px] pt-[20px] lg:pt-[50px] my-0 mx-[20px] lg:mx-[50px] box-border z-2"
     >
       <div
         id="data"
@@ -78,7 +86,11 @@
         <div
           class="item w-[100%] box-border flex-col justify-start align-center lg:align-start content-start lg:px-[40px] m-0"
         >
-          <h2 class="text-center">IP ADDRESS</h2>
+          <h2
+            class="mt-0 mb-[5px] lg:mb-0 text-center text-xs lg:text-sm font-medium lg:font-bold"
+          >
+            IP ADDRESS
+          </h2>
           <p
             id="ipaddress"
             class="text-xl lg:text-[1.75rem] text-center lg:text-left font-medium text-very-dark-gray"
@@ -87,7 +99,11 @@
         <div
           class="item w-[100%] box-border flex-col justify-start align-center lg:align-start content-start lg:px-[40px] m-0"
         >
-          <h2 class="text-center">LOCATION</h2>
+          <h2
+            class="mt-0 mb-[5px] lg:mb-0 text-center text-xs lg:text-sm font-medium lg:font-bold"
+          >
+            LOCATION
+          </h2>
           <p
             id="location"
             class="text-xl lg:text-[1.75rem] text-center lg:text-left font-medium text-very-dark-gray"
@@ -96,7 +112,11 @@
         <div
           class="item w-[100%] box-border flex-col justify-start align-center lg:align-start content-start lg:px-[40px] m-0"
         >
-          <h2 class="text-center">TIMEZONE</h2>
+          <h2
+            class="mt-0 mb-[5px] lg:mb-0 text-center text-xs lg:text-sm font-medium lg:font-bold"
+          >
+            TIMEZONE
+          </h2>
           <p
             id="timezone"
             class="text-xl lg:text-[1.75rem] text-center lg:text-left font-medium text-very-dark-gray"
@@ -105,7 +125,11 @@
         <div
           class="item w-[100%] box-border flex-col justify-start align-center lg:align-start content-start lg:px-[40px] m-0"
         >
-          <h2 class="text-center">ISP</h2>
+          <h2
+            class="mt-0 mb-[5px] lg:mb-0 text-center text-xs lg:text-sm font-medium lg:font-bold"
+          >
+            ISP
+          </h2>
           <p
             id="isp"
             class="text-xl lg:text-[1.75rem] text-center lg:text-left font-medium text-very-dark-gray"
@@ -118,8 +142,11 @@
         aria-live="polite"
       ></div>
     </main>
-    <section id="map"></section>
-    <footer role="contentinfo" class="attribution">
+    <section id="map" class="w-[100%] max-h-[100%] z-1"></section>
+    <footer
+      role="contentinfo"
+      class="mt-[40px] text-very-dark-gray text-xs text-center"
+    >
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
@@ -127,7 +154,6 @@
       <a
         href="https://www.flaticon.com/free-icons/letter-f"
         title="letter f icons"
-        style="text-align: center; font-size: 8pt"
       >
         <p>Letter f icons created by rashedul.islam - Flaticon</p></a
       >
