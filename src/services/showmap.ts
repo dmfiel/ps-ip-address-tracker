@@ -1,3 +1,4 @@
+// Display a map based on coordinates with Leaflet and OpenStreetMap
 import {
   map as leafletMap,
   Map as LeafletMap,

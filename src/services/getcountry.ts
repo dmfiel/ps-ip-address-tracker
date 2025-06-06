@@ -23,7 +23,7 @@ export async function getCountry(countryCode: string = 'US') {
       const data = JSON.parse(localCountry);
       if (data) {
         let countryData: CountryData = {
-          flagImg: data.flags.png,
+          flagImg: data.flags.svg,
           flagAlt: data.flags.alt,
           countryName: data.name.common
         };
@@ -37,7 +37,7 @@ export async function getCountry(countryCode: string = 'US') {
     );
 
     let countryData: CountryData = {
-      flagImg: data.flags.png,
+      flagImg: data.flags.svg,
       flagAlt: data.flags.alt,
       countryName: data.name.common
     };

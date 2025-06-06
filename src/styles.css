@@ -1,115 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import 'tailwindcss';
+@theme {
+  --color-white: white;
+  --color-black: black;
+  --color-red: red;
+  --color-very-light-gray: rgb(235, 235, 235);
+  --color--light-gray: lightgray;
+  --color-very-dark-gray: hsl(0, 0%, 17%);
+  --color-dark-gray: hsl(0, 0%, 59%);
+  --font-rubik: 'Rubik', sans-serif;
+}
 
 :root {
-  --White: #ffffff;
   --Very-Dark-Gray: hsl(0, 0%, 17%);
   --Dark-Gray: hsl(0, 0%, 59%);
 }
-html {
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-}
 body {
-  /* background-color: var(--Slate-300); */
-  font-family: 'Rubik', sans-serif;
-  color: var(--White);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 0px;
   background-image: url('./images/pattern-bg-desktop.png');
   background-repeat: no-repeat;
   background-position: top center;
-  max-width: 1440px;
-  margin: 0 auto;
 }
 
-#header_flags {
-  padding: 35px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
-  width: calc(100% - 70px);
-  z-index: 3;
-}
-
-#flags-small {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: top;
-  text-align: center;
-}
-
-h1 {
-  font-weight: 500;
-  margin: 30px;
-  text-align: center;
-  width: 100%;
-}
-
-#ipaddr {
-  font-size: 1.125rem;
-  padding: 15px;
-  border: 1px solid var(--Dark-Gray);
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
-  width: 400px;
-  margin: 0 -10px 55px 0;
-}
 #search {
-  font-family: 'Rubik', sans-serif;
-  font-size: 1.125rem;
-  font-weight: 700;
-  padding: 15px 20px;
-  border: 1px solid black;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  color: white;
-  background-color: black;
-  margin: 0;
-  height: 54px;
+  translate: -5px 0px;
 }
-main {
-  position: absolute;
-  padding-top: 50px;
-  width: calc(100% - 100px);
-  max-width: 1340px;
-  box-sizing: border-box;
-  top: 150px;
-  z-index: 2; /* make this element on top of the map */
-}
-#data {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  background-color: white;
-  border-radius: 15px;
-  border: 1px solid lightgrey;
-  color: var(--Dark-Gray);
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.item {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  align-content: flex-start;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  border-right: 1px solid lightgrey;
-  width: 100%;
-  padding: 0 40px;
-  overflow-wrap: anywhere;
-}
-
-.item:last-child {
-  border-right: none;
+#error {
+  translate: 0 -30px;
 }
 
 h2 {
@@ -118,22 +34,8 @@ h2 {
   font-weight: 700;
 }
 
-.item span {
-  font-size: 1.75rem;
-  font-weight: 500;
-  color: var(--Very-Dark-Gray);
-}
-
 .hidden {
   display: none;
-}
-
-#error {
-  color: red;
-  width: 100%;
-  text-align: center;
-  font-size: 2rem;
-  translate: 0 -40px;
 }
 
 #map {
@@ -165,60 +67,31 @@ h2 {
   height: 100px;
   width: 190px;
 }
+main {
+  width: calc(100% - 40px);
+}
 
-@media screen and (max-width: 1000px) {
-  body {
-    background-image: url('./images/pattern-bg-desktop.png');
-  }
-  h1 {
-    font-size: 1.5rem;
-  }
-  #controls {
-    padding: 0px 20px;
-    width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-  }
-  #ipaddr {
-    min-width: 250px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  #search {
-    height: 53px;
-  }
-
+@media screen and (min-width: 1024px) {
   main {
-    top: 145px;
-    padding-top: 20px;
-    width: calc(100% - 40px);
+    width: calc(100% - 100px);
   }
-
-  #data {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 30px;
-    gap: 20px;
+  #error {
+    translate: 0 -35px;
   }
   .item {
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    box-sizing: border-box;
-    margin: 0;
+    border-right: 1px solid lightgrey;
+    overflow-wrap: anywhere;
+  }
+  .item:last-child {
     border-right: none;
   }
+}
+
+@media screen and (max-width: 1024px) {
   h2 {
     font-size: 0.75rem;
     font-weight: 500;
     margin-bottom: 5px;
-  }
-  .item span {
-    font-size: 1.25rem;
-    font-weight: 500;
   }
 
   #header_flags {
@@ -245,10 +118,5 @@ h2 {
   .flag img {
     height: 32px;
     width: 60px;
-  }
-
-  #error {
-    font-size: 1rem;
-    translate: 0 -30px;
   }
 }

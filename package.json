@@ -16,8 +16,10 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
+    "@tailwindcss/cli": "^4.1.8",
     "@types/geojson": "^7946.0.16",
     "@types/leaflet": "^1.9.18",
-    "leaflet": "^1.9.4"
+    "leaflet": "^1.9.4",
+    "tailwindcss": "^4.1.8"
   }
 }

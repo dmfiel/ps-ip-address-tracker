@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="w-[100%] max-w-[1440px] my-0 mx-auto">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,52 +21,102 @@
       integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
       crossorigin=""
     />
-    <link rel="stylesheet" href="./styles.css" />
-    <title>Web Address Finder</title>
+    <link rel="stylesheet" href="./tailwind.css" />
+    <title>Web Address Tracker</title>
   </head>
-  <body>
-    <div id="header_flags">
+  <body
+    class="font-rubik text-white flex-col justify-center items-center max-w-[1440px] my-0 mx-auto"
+  >
+    <div
+      id="header_flags"
+      class="p-[35px] w-[100%] flex flex-row justify-between z-3"
+    >
       <section class="flag flag-big"></section>
       <header role="banner">
-        <div id="flags-small">
+        <div
+          id="flags-small"
+          class="flex flex-row justify-between align-top text-center"
+        >
           <section class="flag flag-small"></section>
-          <h1>Web Address Finder</h1>
+          <h1
+            class="text-2xl lg:text-[2rem] font-medium my-[20px] lg:m-0 lg:mb-[20px] text-center w-[100%]"
+          >
+            Web Address Tracker
+          </h1>
           <section class="flag flag-small"></section>
         </div>
-        <div id="controls">
+        <div
+          id="controls"
+          class="w-[100%] px-[20px] box-border flex flex-nowrap mb-[85px] items-start"
+        >
           <label class="hidden" for="ipaddr">IP Address or Domain</label>
           <input
             type="text"
             id="ipaddr"
             placeholder="Search for any IP address or domain"
+            class="w-[100%] lg:w-[400px] box-border bg-white hover:bg-very-light-gray text-lg box-border text-black p-[15px] border border-dark-gray rounded-l-2xl"
           />
-          <button id="search">
+          <button
+            id="search"
+            class="font-rubik bg-black hover:bg-very-dark-gray px-[20px] h-[60px] rounded-r-2xl text-lg font-bold"
+          >
             <img src="./images/icon-arrow.svg" alt="Submit" />
           </button>
         </div>
       </header>
       <section class="flag flag-big"></section>
     </div>
-    <main id="main" role="main">
-      <div id="data">
-        <div class="item">
-          <h2>IP ADDRESS</h2>
-          <span id="ipaddress"></span>
+    <main
+      id="main"
+      role="main"
+      class="absolute top-[145px] lg:top-[150px] max-w-[1340px] pt-[20px] lg:pt-[50px] my-0 mx-[20px] lg:mx-[50px] box-border z-2"
+    >
+      <div
+        id="data"
+        class="w-[100%] box-border flex flex-col gap-[20px] p-[30px] lp:p-0 lg:flex-row justify-center lg:justify-around bg-white border-light-gray text-dark-gray rounded-2xl"
+      >
+        <div
+          class="item w-[100%] box-border flex-col justify-start align-center lg:align-start content-start lg:px-[40px] m-0"
+        >
+          <h2 class="text-center">IP ADDRESS</h2>
+          <p
+            id="ipaddress"
+            class="text-xl lg:text-[1.75rem] text-center lg:text-left font-medium text-very-dark-gray"
+          ></p>
         </div>
-        <div class="item">
-          <h2>LOCATION</h2>
-          <span id="location"></span>
+        <div
+          class="item w-[100%] box-border flex-col justify-start align-center lg:align-start content-start lg:px-[40px] m-0"
+        >
+          <h2 class="text-center">LOCATION</h2>
+          <p
+            id="location"
+            class="text-xl lg:text-[1.75rem] text-center lg:text-left font-medium text-very-dark-gray"
+          ></p>
         </div>
-        <div class="item">
-          <h2>TIMEZONE</h2>
-          <span id="timezone"></span>
+        <div
+          class="item w-[100%] box-border flex-col justify-start align-center lg:align-start content-start lg:px-[40px] m-0"
+        >
+          <h2 class="text-center">TIMEZONE</h2>
+          <p
+            id="timezone"
+            class="text-xl lg:text-[1.75rem] text-center lg:text-left font-medium text-very-dark-gray"
+          ></p>
         </div>
-        <div class="item">
-          <h2>ISP</h2>
-          <span id="isp"></span>
+        <div
+          class="item w-[100%] box-border flex-col justify-start align-center lg:align-start content-start lg:px-[40px] m-0"
+        >
+          <h2 class="text-center">ISP</h2>
+          <p
+            id="isp"
+            class="text-xl lg:text-[1.75rem] text-center lg:text-left font-medium text-very-dark-gray"
+          ></p>
         </div>
       </div>
-      <div id="error" class="hidden" aria-live="polite"></div>
+      <div
+        id="error"
+        class="hidden text-base lg:text-3xl text-red text-center box-border"
+        aria-live="polite"
+      ></div>
     </main>
     <section id="map"></section>
     <footer role="contentinfo" class="attribution">

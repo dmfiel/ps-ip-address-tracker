@@ -1,3 +1,4 @@
+// Used to update the map element to take up the remainder of the page
 export function resizeElementHeight(element: HTMLElement, extra: number = 0) {
   var height = 0;
   var body = window.document.body;
