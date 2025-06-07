@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="w-[100%] max-w-[1440px] my-0 mx-auto">
+<html lang="en" class="w-full max-w-[1440px] my-0 mx-auto">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,110 +29,110 @@
   >
     <div
       id="header_flags"
-      class="w-[100%] box-border lg:box-content lg:flex flex-row justify-between z-3 whitespace-nowrap"
+      class="w-full box-border lg:box-content lg:flex flex-row justify-between z-3 whitespace-nowrap"
     >
       <section
-        class="flag flag-big m-[35px] flex-col gap-[10px] align-center text-center"
+        class="flag flag-big m-9 flex-col gap-2.5 align-center text-center"
       ></section>
-      <header role="banner" class="lg:mt-[25px]">
+      <header role="banner" class="lg:mt-6">
         <div
           id="flags-small"
           class="flags-small flex flex-row justify-between align-top text-center"
         >
           <section
-            class="flag flag-small flex-col gap-[5px] align-center m-[10px] text-[0.5rem]"
+            class="flag flag-small flex-col gap-1.5 align-center m-2.5 text-[0.5rem]"
           ></section>
           <h1
-            class="text-2xl lg:text-[2rem] font-medium my-[20px] lg:m-0 lg:mb-[20px] text-center w-[100%]"
+            class="text-2xl lg:text-4xl font-medium my-5 lg:m-0 lg:mb-5 text-center w-full"
           >
             Web Address Tracker
           </h1>
           <section
-            class="flag flag-small flex-col gap-[5px] align-center m-[10px] text-[0.5rem]"
+            class="flag flag-small flex-col gap-1.5 align-center m-2.5 text-[0.5rem]"
           ></section>
         </div>
         <div
           id="controls"
-          class="w-[100%] px-[20px] box-border flex flex-nowrap mb-[130px] items-start"
+          class="w-full px-5 box-border flex flex-nowrap mb-[130px] items-start"
         >
           <label class="hidden" for="ipaddr">IP Address or Domain</label>
           <input
             type="text"
             id="ipaddr"
             placeholder="Search for any IP address or domain"
-            class="w-[100%] lg:w-[400px] box-border bg-white hover:bg-very-light-gray text-lg box-border text-black p-[15px] border border-dark-gray rounded-l-2xl"
+            class="w-full lg:w-[400px] box-border bg-white hover:bg-very-light-gray text-lg box-border text-black p-[15px] border border-dark-gray rounded-l-2xl"
           />
           <button
             id="search"
-            class="font-rubik bg-black hover:bg-very-dark-gray px-[20px] h-[60px] rounded-r-2xl text-lg font-bold"
+            class="font-rubik bg-black hover:bg-very-dark-gray px-5 h-[60px] rounded-r-2xl text-lg font-bold"
           >
             <img src="./images/icon-arrow.svg" alt="Submit" />
           </button>
         </div>
       </header>
       <section
-        class="flag flag-big m-[35px] flex-col gap-[10px] align-center text-center"
+        class="flag flag-big m-9 flex-col gap-2.5 align-center text-center"
       ></section>
     </div>
     <main
       id="main"
       role="main"
-      class="absolute top-[140px] lg:top-[135px] max-w-[1340px] pt-[20px] lg:pt-[50px] my-0 mx-[20px] lg:mx-[50px] box-border z-2"
+      class="absolute top-[140px] lg:top-[135px] max-w-[1340px] pt-5 lg:pt-14 my-0 mx-5 lg:mx-14 box-border z-2"
     >
       <div
         id="data"
-        class="w-[100%] box-border flex flex-col gap-[20px] p-[30px] lp:p-0 lg:flex-row justify-center lg:justify-around bg-white border-light-gray text-dark-gray rounded-2xl"
+        class="w-full box-border flex flex-col gap-5 p-7 lp:p-0 lg:flex-row justify-center lg:justify-around bg-white border-light-gray text-dark-gray rounded-2xl"
       >
         <div
-          class="item w-[100%] box-border flex-col justify-start align-center lg:align-start content-start lg:px-[40px] m-0"
+          class="item w-full box-border flex-col justify-start align-center lg:align-start content-start lg:px-10 m-0"
         >
           <h2
-            class="mt-0 mb-[5px] lg:mb-0 text-center text-xs lg:text-sm font-medium lg:font-bold"
+            class="mt-0 mb-1.5 lg:mb-0 text-center text-xs lg:text-sm font-medium lg:font-bold"
           >
             IP ADDRESS
           </h2>
           <p
             id="ipaddress"
-            class="text-xl lg:text-[1.75rem] text-center lg:text-left font-medium text-very-dark-gray"
+            class="text-xl lg:text-3xl text-center lg:text-left font-medium text-very-dark-gray"
           ></p>
         </div>
         <div
-          class="item w-[100%] box-border flex-col justify-start align-center lg:align-start content-start lg:px-[40px] m-0"
+          class="item w-full box-border flex-col justify-start align-center lg:align-start content-start lg:px-10 m-0"
         >
           <h2
-            class="mt-0 mb-[5px] lg:mb-0 text-center text-xs lg:text-sm font-medium lg:font-bold"
+            class="mt-0 mb-1.5 lg:mb-0 text-center text-xs lg:text-sm font-medium lg:font-bold"
           >
             LOCATION
           </h2>
           <p
             id="location"
-            class="text-xl lg:text-[1.75rem] text-center lg:text-left font-medium text-very-dark-gray"
+            class="text-xl lg:text-3xl text-center lg:text-left font-medium text-very-dark-gray"
           ></p>
         </div>
         <div
-          class="item w-[100%] box-border flex-col justify-start align-center lg:align-start content-start lg:px-[40px] m-0"
+          class="item w-full box-border flex-col justify-start align-center lg:align-start content-start lg:px-10 m-0"
         >
           <h2
-            class="mt-0 mb-[5px] lg:mb-0 text-center text-xs lg:text-sm font-medium lg:font-bold"
+            class="mt-0 mb-1.5 lg:mb-0 text-center text-xs lg:text-sm font-medium lg:font-bold"
           >
             TIMEZONE
           </h2>
           <p
             id="timezone"
-            class="text-xl lg:text-[1.75rem] text-center lg:text-left font-medium text-very-dark-gray"
+            class="text-xl lg:text-3xl text-center lg:text-left font-medium text-very-dark-gray"
           ></p>
         </div>
         <div
-          class="item w-[100%] box-border flex-col justify-start align-center lg:align-start content-start lg:px-[40px] m-0"
+          class="item w-full box-border flex-col justify-start align-center lg:align-start content-start lg:px-10 m-0"
         >
           <h2
-            class="mt-0 mb-[5px] lg:mb-0 text-center text-xs lg:text-sm font-medium lg:font-bold"
+            class="mt-0 mb-1.5 lg:mb-0 text-center text-xs lg:text-sm font-medium lg:font-bold"
           >
             ISP
           </h2>
           <p
             id="isp"
-            class="text-xl lg:text-[1.75rem] text-center lg:text-left font-medium text-very-dark-gray"
+            class="text-xl lg:text-3xl text-center lg:text-left font-medium text-very-dark-gray"
           ></p>
         </div>
       </div>
@@ -142,10 +142,10 @@
         aria-live="polite"
       ></div>
     </main>
-    <section id="map" class="w-[100%] max-h-[100%] z-1"></section>
+    <section id="map" class="w-full max-h-full z-1"></section>
     <footer
       role="contentinfo"
-      class="mt-[40px] text-very-dark-gray text-xs text-center"
+      class="mt-10 text-very-dark-gray text-xs text-center"
     >
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
