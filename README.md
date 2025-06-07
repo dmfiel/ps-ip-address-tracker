@@ -1,6 +1,6 @@
-# Per Scholas - Module 6 - SBA - eCommerce System
+# Web Address Tracker
 
-This project uses TypeScript and advanced JavaScript to build a functional, real-world application. It employs object-oriented programming (OOP) principles, asynchronous operations, error handling, and API interaction.
+This project uses TypeScript and Tailwind to build a functional, real-world application. It allows the user to search for any IPv4 address or domain name to find out location and ISP for the web server and then display the location on an interactive map. This uses the the IP Geolocation API from IPify and mapping from LeafletJS. The system also uses the country API from the RESTCountries API to display the location's country flag and name.
 
 ## Table of contents
 
@@ -17,26 +17,38 @@ This project uses TypeScript and advanced JavaScript to build a functional, real
 
 ### The challenge
 
-Create an eCommerce product management system using TypeScript. The system should pull product information from the DummyJSON product API.
+Users should be able to:
+
+- View the optimal layout for each page depending on their device's screen size
+- See hover states for all interactive elements on the page
+- See their own IP address on the map on the initial page load
+- Search for any IP addresses or domains and see the key information, location, and country flag.
+- Store query results in local storage and re-use them for repeat searches to lower API usage and network bandwith
+- See error messages clearly when searches don't yield results
 
 ### Screenshot
 
-![](./screenshot.png)
+![](./src/images/screenshot.png)
+
+### Links
+
+- Live Site URL: (https://fiel.us/ip-tracker/)
 
 ## My process
 
 ### Built with
 
 - TypeScript API fetching, asynchronous operations, event handling, data manipulation, and DOM updates.
+- Tailwind CSS custom properties
 - Webpack / TSC transpiling and bundling
 - Semantic HTML5 markup
-- CSS custom properties
+- Mobile-first, responsive, accessible layout
 
 ### What I learned
 
-There was a bit of difficulty with typing on the timedFetch function that I adapted from an earlier JavaScript course. It uses a timer in order to exit gracefully from an API call that isn't returned quickly. The problem is that the timer would still continue to run, even when the API call returned successfully. This was noticeable when the code was executed by ts-node. So, I decided to save the handle to setTimeout in order to call cancelTimeout when the API returned successfully. The handle required a type of 'NodeJS.Timeout | undefined' which took a bit of time to setup correctly.
+The layout was a bit difficult, especially since the Leaflet map changes its z-index when loaded. This negatively affected the page styling, so we needed to manually set the z-index on other elements in order to bring them to the front.
 
-In addition, getting webpack configured correctly took some time. But after some setup, I was able to get the webpack dev server running so that changed to the TypeScript and HTML/CSS files were reflected in the development display automatically. Avoiding manual runs of tsc and/or copying files was a great boon to the coding cycle.
+The other API calls were pretty straightforward. However, many domains did not have ISP's listed, so we had to remove the validation check for them, so that they would be displayed without that data.
 
 ## Author
 
@@ -47,3 +59,5 @@ David Fiel
 ## Acknowledgments
 
 Thanks to Per Scholas!
+Thanks to Danail Gabenski for the IPv4 regex (https://stackoverflow.com/questions/5284147/validating-ipv4-addresses-with-regexp/68104187#68104187)
+Thanks to Jason Bunting for the element resizing code (https://stackoverflow.com/questions/33080/setting-the-height-of-a-div-dynamically)
